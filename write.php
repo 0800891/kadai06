@@ -21,6 +21,6 @@ $file = fopen("data/data.csv","a");
 fwrite($file, $str);
 fclose($file);
 
-// header('Location: index_01.php');
-// exit;
+header('Location: read.php');
+exit;
 ?>

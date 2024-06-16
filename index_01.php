@@ -86,7 +86,8 @@
         reader.onerror = function() {
              console.log(reader.error);
             };
+            window.location.href = './write.php';
     })
-   
+
     </script>
 </html>
