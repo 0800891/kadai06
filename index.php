@@ -27,47 +27,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     
-    // const img =  $("#imgUpload").val();
-
-    
-    
-    // const uploadPhotoButton = document.querySelector('#imgUpload');
-    // uploadPhotoButton.addEventListener("change", function() {        
-    //         let file = uploadPhotoButton.files[0]; //読み込んだファイルを格納
-    //         const reader = new FileReader(); //ファイル読み込みのためのオブジェクトのインスタンス化
-    //         reader.onload = () => { 
-    //         console.dir(file);        //onload 読み込みが終わったときに発火する
-    //         let photo_0 = reader.result;  //読み込んだ画像ファイルを格納
-    //         // localStorage.setItem('dataURLimg', photo); //localstorageに保存
-    //         console.log(photo_0);
-    //             }
-    //         reader.readAsDataURL(file);     //アップロードファイルのDataURL化
-    //     });
-
+  
     $("#send").on("click",function(){
         let name =  $("#name").val();
         let text_building_name = $("#text_building_name").val();
         let address = $("#address").val();
-        let selectElement = document.getElementById("design_code");;
+        let selectElement = document.getElementById("design_code");
         let design_code = selectElement.value;
 
 
         
 
         let xhr = new XMLHttpRequest();
-         xhr.open('POST','./write.php',true);
+         xhr.open('POST','write.php',true);
         xhr.responseType = 'text';//'text','json','arraybuffer','document','blob'
         let fd = new FormData();
         fd.append("name",name);
-        console.log(name,'name');
+        // console.log(name,'name');
         fd.append("email",text_building_name);
 
-        console.log(text_building_name,'text_building_name');
+        // console.log(text_building_name,'text_building_name');
         fd.append("address",address);
 
         fd.append("Structural_Design_Code",design_code);
 
-        console.log(design_code,'Design_code');
+        // console.log(design_code,'Design_code');
 
         const reader = new FileReader(); //ファイル読み込みのためのオブジェクトのインスタンス化
         const uploadPhotoButton = document.querySelector('#imgUpload');
@@ -80,13 +64,16 @@
            let img_src = photo;
            
            fd.append("img_src",img_src);
-           console.log(img_src);
+        //    console.log(img_src);
 
-        xhr.send(fd);}
+        xhr.send(fd);
+        console.log(fd);}
         reader.onerror = function() {
              console.log(reader.error);
             };
-            window.location.href = './write.php';
+
+    window.location.href = 'write.php';
+            
     })
 
     </script>
