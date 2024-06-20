@@ -10,7 +10,7 @@
 ## ③DEMO
 
 デプロイしている場合はURLを記入（任意）
-https://0800891.github.io/kadai05/
+https://michey.sakura.ne.jp/kadai06/
 
 ## ④作ったアプリケーション用のIDまたはPasswordがある場合
 IDやPWはないです
